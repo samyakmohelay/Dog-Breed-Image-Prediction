@@ -1,6 +1,6 @@
 # Multi-class Dog Breed Classification or Dog Vision
 
-This notebook builds an end-to-end multi-class image classifier using TensorFlow 2.0 and TensorFlow Hub.
+This notebook builds an end-to-end multi-class dog image classifier using TensorFlow 2.0 and TensorFlow Hub.
 
 ## Problem
 Identifying the breed of a dog given an image of a dog.
@@ -9,12 +9,14 @@ Identifying the breed of a dog given an image of a dog.
 The data we're using is from Kaggle's [dog breed identification competition](https://www.kaggle.com/c/dog-breed-identification/data).
 
 We have a training set and a test set of images of dogs. 
-Each image has a filename that is its unique id. The dataset comprises 120 breeds of dogs. 
+Each image has a filename that is its unique id. 
+
+The dataset comprises **120** breeds of dogs. 
 The goal of the competition is to create a classifier capable of determining a dog's breed from a photo. 
 
 ### The list of breeds is as follows: 
 
-PIC HERE!
+![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/1.png)
 
 ## Features
 Some information about the data:
@@ -32,17 +34,18 @@ Some information about the data:
 - Make sure we're using a GPU
 
 ### 2. Getting the Data ready (turning into Tensors)
-With all machine learning models, our data has to be in numerical format. 
+First, we'll visualize the number of dogs per breed.
+![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/2.png)
 
-The number of dogs per breed (IMAGE 2)
+With all machine learning models, our data has to be in numerical format.
 
-So that's what we'll be doing first. Turning our images into Tensors (numerical representations).
+So that's what we'll be doing next. Turning our images into Tensors (numerical representations).
 
-IMAGE 3
+![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/3.png)
 
 Now we've demonstrated what an image looks like as a tensor, let's make a function to preprocess them.
 
-The function will be as follows: 
+> The function will be as follows: 
 
 - Take an image filepath as input.
 - Use TensorFlow to read the file and save it to a variable, image.
@@ -67,11 +70,11 @@ Our data is now in batches, however, these can be a little hard to understand, l
 
 Creating a function for viewing images in a data batch which sisplays a plot of 25 images and their labels from a data batch.
 
-IMAGE 4
+![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/4.png)
 
 ### 5. Building a model
 
-Before we build a model, there are a few things we need to define:
+> Before we build a model, there are a few things we need to define:
 
 - The input shape (our images shape, int the form of Tensors) of our model.
 - The output shape (image labels, in the forms of Tensors) of our model.
@@ -79,7 +82,7 @@ Before we build a model, there are a few things we need to define:
 
 After getting our inputs, outputs and model ready to go. Let's put them together into a Keras deep learning model.
 
-Knowing this, lets create a function which:
+> Knowing this, lets create a function which:
 
 - Takes the input shape, output shape and the model we've chosen as parameters.
 - Defines the layers in a Keras model in sequential fashion (do this first, then this, then that).
@@ -102,7 +105,7 @@ Our first model is only going to train on 1000 images, to make sure everything i
 
 ### 8. Making and evaluating predictions using a trained model
 
-IMAGE 5
+![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/5.png)
 
 ### 9. A function to make these all a bit more visaulized.
 
@@ -112,7 +115,7 @@ We'll create a function which:
 - Convert the prediction probabilities to a predicted label. ✅
 - Plot the predicted label, its predicted probability, the truth label and the target image on a single plot. ✅
 
-IMAGE 6
+![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/6.png)
 
 ### 10. Another function to view our models top 10 predictions.
 
@@ -128,19 +131,20 @@ Now we've got one function to visualize our models top prediction, let's make an
   - Prediction labels ✅
 - Plot the top 10 prediction probability values and labels, coloring the true label green ✅
 
-IMAGE 7
+![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/7.png)
 
 ### 11. Training the model on FULL DATA! 🐶
 - Created a data batch with the full data set
 - Created a model for full model
 - Created full model callbacks
 
-Fitted the full model to the full data IMAGE 8.
+Fitted the full model to the full data.
+![Full Data](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/8.png)
 
 ### 12. Making predictions on the test dataset
 Since our model has been trained on images in the form of Tensor batches, to make predictions on the test data, we'll have to get it into the same format.
 
-To make predictions on the test data, we'll:
+> To make predictions on the test data, we'll:
 
 - Get the test image filenames.
 - Convert the filenames into test data batches using create_data_batches() and setting the test_data parameter to True (since the test data doesn't have labels). 
@@ -177,10 +181,10 @@ The DataFrame for Kaggle is ["full_model_predictions_submission_1_mobilenetV2.cs
 
 The below images of some dogs are taken from my camera to test the model.
 
-IMAGE 9
+![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/9.png)
 
 Interesting,
-- The dog on the upper row is actually a mix-breed of German Shepherd and Rottweiler both. Thats's why the model has predicted in such a way.
+- The dog on the upper row is actually a mix-breed of German Shepherd and Rottweiler both. That's why the model has predicted in such a way.
 - And both dogs on the bottom are pure German Shepherd and Beagle respectively.
 
-#### Concluding, the model is working with great accuracy!
+#### Great, the model is working very accurately!
