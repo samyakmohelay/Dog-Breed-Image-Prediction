@@ -168,7 +168,7 @@ Looking at the Kaggle sample submission, we find that it wants our models predic
 
 The DataFrame for Kaggle is ["full_model_predictions_submission_1_mobilenetV2.csv"](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/full_model_predictions_submission_1_mobilenetV2.csv).
 
-### Final: Making predictions on custom images
+### 13. Final: Making predictions on custom images
 #### At last, our model is capable of predicting the breed of dog from any picture taken on the spot!
 
 > To make predictions on custom images, we'll:
