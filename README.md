@@ -22,9 +22,9 @@ The goal of the competition is to create a classifier capable of determining a d
 Some information about the data:
 
 - We're dealing with images (unstructured data) so it's probably best we use deep learning/transfer learning.
-- There are 120 breeds of dogs (this means there of 120 didderent classes).
-- There are around 10,000+ images in the training set.(have labels)
-- There are around 10,000+ images in the test set. (don't have labels- we have to predict them)
+- There are `120` breeds of dogs (this means there of 120 didderent classes).
+- There are around `10,000+` images in the training set.(have labels)
+- There are around `10,000+` images in the test set. (don't have labels- we have to predict them)
 
 ## - The workflow will be as follows
 
