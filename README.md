@@ -28,12 +28,12 @@ Some information about the data:
 
 ## - The workflow will be as follows
 
-### 1. Getting our workspace ready
+## 1. Getting our workspace ready
 - Import Tensorflow
 - Import Tensorflow Hub
 - Make sure we're using a GPU
 
-### 2. Getting the Data ready (turning into Tensors)
+## 2. Getting the Data ready (turning into Tensors)
 First, we'll visualize the number of dogs per breed.
 ![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/2.png)
 
@@ -54,7 +54,7 @@ Now we've demonstrated what an image looks like as a tensor, let's make a functi
 - Resize the image to be a shape of (224, 224)
 - Return the modified image.
 
-### 3. Turning our data into batches
+## 3. Turning our data into batches
 
 Why turn our data into batches?
 
@@ -64,7 +64,7 @@ That's why we do about 32 (batch size) images at a time (can manually adjust bat
 
 In order to use TenserFlow effictively, we need our data in the form of Tensor tuples which look like this: (image, label).
 
-### 4. Visualizing the Data Batches
+## 4. Visualizing the Data Batches
 
 Our data is now in batches, however, these can be a little hard to understand, let's visialize them.
 
@@ -72,7 +72,7 @@ Creating a function for viewing images in a data batch which sisplays a plot of 
 
 ![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/4.png)
 
-### 5. Building a model
+## 5. Building a model
 
 > Before we build a model, there are a few things we need to define:
 
@@ -92,7 +92,7 @@ After getting our inputs, outputs and model ready to go. Let's put them together
 
 All of these steps can be found [here](https://www.tensorflow.org/guide/keras/sequential_model).
 
-### 6. Creating callbacks
+## 6. Creating callbacks
 Callbacks are helper functions a model can use during training to do such things as save its progress, check its progress or stop training early if a model stops improving.
 
 We'll create two callbacks, one for **TensorBoard** which helps our models progress and another for **Early stopping** which prevents our model from training for too long.
@@ -100,14 +100,14 @@ We'll create two callbacks, one for **TensorBoard** which helps our models progr
 - TensorBoard Callback
 - Early Stopping Callback
 
-### 7. Training a model (on subset of data)
+## 7. Training a model (on subset of data)
 Our first model is only going to train on 1000 images, to make sure everything is working.
 
-### 8. Making and evaluating predictions using a trained model
+## 8. Making and evaluating predictions using a trained model
 
 ![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/5.png)
 
-### 9. A function to make these all a bit more visaulized.
+## 9. A function to make these all a bit more visaulized.
 
 We'll create a function which:
 
@@ -117,7 +117,7 @@ We'll create a function which:
 
 ![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/6.png)
 
-### 10. Another function to view our models top 10 predictions.
+## 10. Another function to view our models top 10 predictions.
 
 Now we've got one function to visualize our models top prediction, let's make another to view our models top 10 predictions.
 
@@ -133,7 +133,7 @@ Now we've got one function to visualize our models top prediction, let's make an
 
 ![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/7.png)
 
-### 11. Training the model on FULL DATA! 🐶
+## 11. Training the model on FULL DATA! 🐶
 - Created a data batch with the full data set
 - Created a model for full model
 - Created full model callbacks
@@ -141,7 +141,7 @@ Now we've got one function to visualize our models top prediction, let's make an
 Fitted the full model to the full data.
 ![Full Data](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/8.png)
 
-### 12. Making predictions on the test dataset
+## 12. Making predictions on the test dataset
 Since our model has been trained on images in the form of Tensor batches, to make predictions on the test data, we'll have to get it into the same format.
 
 > To make predictions on the test data, we'll:
@@ -154,7 +154,7 @@ Now, we can make predictions on test data batch using the loaded full model.
 
 Saving the predictions (NumPy array) to csv file (for access later).
 
-### 12. Preparing test dataset predictions for Kaggle
+## 13. Preparing test dataset predictions for Kaggle
 I am also going to submit the model's prediction probability output to **Kaggle's dog breed submissions**:
 
 Looking at the Kaggle sample submission, we find that it wants our models prediction probaiblity outputs in a DataFrame with an ID and a column for each different dog breed. [Link](https://www.kaggle.com/c/dog-breed-identification/overview/evaluation)
@@ -168,7 +168,7 @@ Looking at the Kaggle sample submission, we find that it wants our models predic
 
 The DataFrame for Kaggle is ["full_model_predictions_submission_1_mobilenetV2.csv"](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/full_model_predictions_submission_1_mobilenetV2.csv).
 
-### 13. Final: Making predictions on custom images
+## 14. Final: Making predictions on custom images
 #### At last, our model is capable of predicting the breed of dog from any picture taken on the spot!
 
 > To make predictions on custom images, we'll:
