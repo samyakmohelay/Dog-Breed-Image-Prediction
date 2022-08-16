@@ -1,6 +1,6 @@
 # Multi-class Dog Breed Classification or Dog Vision
 
-![](https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/dog.png)
+<img src="https://github.com/samyakmohelay/Dog-Breed-Predictor/blob/main/readme_images/dog.png" width="600" height="350">
 
 This notebook builds an end-to-end multi-class dog image classifier using TensorFlow 2.0 and TensorFlow Hub.
 
